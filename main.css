@@ -1,0 +1,327 @@
+@font-face {
+    font-family: 'bluu_nexttitling';
+    src:  url('./assets/BluuNext-Titling.ttf') format('truetype'),
+          url('./assets/bluunext-titling.woff2') format('woff2'),
+          url('./assets/bluunext-titling.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    transition: all 0.5s ease;
+}
+
+#pw-over {
+font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 90px;
+    font-weight: 700;
+    position: absolute;
+    display: flex;
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    justify-items: center;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0a0a0a;
+    z-index: 100;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#pwop {
+	height: 40px;
+	font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+
+}
+
+#pwos {
+	font-family: 'bluu_nexttitling';
+  font-size: 24px;
+  font-weight: 700;
+
+	box-shadow: 0; /*this is very funny...*/
+}
+
+.bluu {
+  font-family: 'bluu_nexttitling';
+  color: #fff;
+  display: inline-block;
+}
+
+@media (orientation: landscape) {
+  #blocker {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) {
+  #blocker {
+    display: none;
+  }
+}
+
+body {
+  background-color: #0a0a0a;
+}
+
+#blocker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  z-index: 99;
+  top: 0%;
+}
+
+#blocker p {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  top: 25%;
+  width: 50%;
+  left: 25%;
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+#wrap {
+    display: flex;
+    position: absolute;
+    background-image: url(./assets/lens-w.svg);
+    margin: auto;
+    width: 60%;
+    height: 50%;
+    top: 0%;
+    left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    justify-content: center;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 38.4px;
+    color: #fff;
+    text-align: center;
+}
+
+#wrap p {
+  vertical-align: middle;
+  margin: auto;
+}
+
+#startbutton {
+  min-width: 350px;
+  min-height: 350px;
+  max-width: 50%;
+  max-height: 60%;
+  margin: auto;
+  top: 50%;
+  border-radius: 50%;
+  background-color: #FF5733;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#imgwrap {
+    position: absolute;
+    width: 100%;
+    min-height: 512px;
+    display: flex;
+    bottom: 12%;
+    justify-content: center;
+    align-items: center;
+}
+
+#hold-img {
+    width: 512px;
+    height: 512px;
+    min-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#timeStamp {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    height: auto;
+    color: #fff;
+    display: none;
+    /* line-height: 100%; */
+    position: absolute;
+}
+
+
+.grid-manual {
+    background-image: url(./assets/grid-manual.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: contain;
+}
+
+.grid-automatic {
+    background-image: url(./assets/grid-automatic.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: contain;
+}
+
+.grid-notavailable {
+    background-image: url(./assets/grid-na.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: contain;
+}
+
+.grid-wait {
+    background-image: url(./assets/grid-wait.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: contain;
+}
+
+.manual {
+    width: 33%;
+    height: auto;
+    background-image: url(./assets/manual.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: contain;
+}
+
+.automatic {
+    width: 33%;
+    height: auto;
+    background-image: url(./assets/automatic.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: contain;
+}
+
+.progress_bar {
+    background: radial-gradient(#ffffff, #ff5733);
+    background-size: 400% 400%;
+
+    -webkit-animation: progress 10s ease infinite;
+    -moz-animation: progress 10s ease infinite;
+    animation: progress 10s ease infinite;
+}
+
+@-webkit-keyframes progress {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes progress {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes progress {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/*Slider for modes*/
+
+#mode-selector {
+  position: absolute;
+  bottom: 4%;
+  width: 30%;
+  height: 3%;
+  left: 35%;
+  padding: 0%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+}
+
+#switchbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.switch {
+    position: relative;
+    width: auto;
+    min-width: 100px;
+    min-height: 50px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: auto;
+    width: auto;
+    min-width: 40px;
+    min-height: 40px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #0a0a0a;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #fff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(46px);
+  -ms-transform: translateX(46px);
+  transform: translateX(46px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 4px;
+}
+
+.slider.round:before {
+  border-radius: 4px;
+}

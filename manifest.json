@@ -1,0 +1,6 @@
+{
+  "name": "Entoptic Field Camera",
+  "description": "Entoptic Field Camera web prototype.",
+  "display":      "standalone",
+  "orientation":  "portrait"
+}

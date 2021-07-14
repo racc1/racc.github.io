@@ -1,7 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+<head>
+	<title>RACC1 Entoptic Field Camera</title>
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+	<meta charset='utf-8'>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@runwayml/hosted-models@latest/dist/hosted-models.js"></script>
+  <!-- <link rel="manifest" href="manifest.json"> -->
+  <!-- <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script> -->
+
+
+  <link rel="stylesheet" href="main.css" type="text/css" media="all">
+  <link rel="icon"  type="image/png" href="./assets/favicon.png">
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div id="pw-over">
+	<form id="pwof">
+		Submit password for <span class='bluu'>RACC 1</span> Entoptic Field Camera early access: <br><input type="password" id="pwop">
+		<br><input type="submit" id="pwos" value="OK">
+	</form>
+</div>
+<div id="blocker"><p><p>The <span class='bluu'>RACC 1</span> Entoptic Field Camera is available on handheld only.</p></div>
+ <div id="wrap">
+    <label id="startbutton">
+      <input type="file" id="file-input" accept="image/*" capture="environment"/>
+    </label>
+  </div>
+  <div id="imgwrap">
+    <div id="timeStamp"></div>
+    <img src="./assets/blank.svg" id="hold-img" class="grid-automatic">
+  </div>
+  <div id="mode-selector">
+    <div class="automatic"></div>
+    <div id="switchbox">
+      <label class="switch">
+        <input type="checkbox" id="check">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="manual"></div>
+  </div>
+  <!-- <a href="https://jesse-benjamin.com/2021/06/04/entoptic-photography/" id="logo" target="_blank"></a> -->
+  <script src="lib/openpgp.min.js"></script>
+  <script src="lib/crypt-tokens.js"></script>
+  <script src="entoptic.js"></script>
 </body>
 </html>
