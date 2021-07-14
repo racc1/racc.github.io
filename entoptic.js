@@ -145,7 +145,7 @@ function init() {
 function prepareInputs(i) {
   var inputImg = new Image();
   inputImg.onload = function() {
-    var procImg = imageToDataUri(inputImg, 512, 512);
+    var procImg = imageToDataUri(inputImg, 256, 256);
     triggerRunway(procImg);
   }
   inputImg.src = i.toString();
@@ -172,7 +172,7 @@ function imageToDataUri(img, width, height) {
 async function triggerRunway(inputImage) {
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-wait");
-  timeStamp.innerHTML = "Preparing " + performance.now();
+  timeStamp.innerHTML = "<span class='bluu'>Preparing </span>" + performance.now();
   timeStamp.style.display = "block";
   holdImg.src = "./assets/blank.svg";
 
@@ -192,11 +192,7 @@ async function triggerRunway(inputImage) {
     if(typeof(inpainting) != 'undefined' && inputs) {
      await inpainting.query(inputs).then(outputs => {
         const { inpainted_image } = outputs;
-        // console.log(inpainted_image);
-        holdImg.src = inpainted_image;
-        startbutton.classList.remove("progress_bar");
-        holdImg.classList.remove("grid-wait");
-        timeStamp.style.display = "none";
+        upscaleImg(inpainted_image);
       }).catch(console.error);
     }
 
