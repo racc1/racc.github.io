@@ -11,7 +11,7 @@ body {
     transition: all 0.5s ease;
 }
 
-input[type="submit"],select:focus,
+input[type="password"],select:focus,
 textarea {
   font-size: 24px;
 }
