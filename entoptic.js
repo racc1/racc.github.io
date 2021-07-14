@@ -170,13 +170,18 @@ function imageToDataUri(img, width, height) {
 
 
 async function triggerRunway(inputImage) {
+
+  console.log("runway triggered");
+
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-wait");
-  timeStamp.innerHTML = "<span class='bluu'>Preparing</span> " + performance.now();
+  timeStamp.innerHTML = "<span class='bluu'>Loading Entoptic Field at</span> " + performance.now();
   timeStamp.style.display = "block";
   holdImg.src = "./assets/blank.svg";
 
-  console.log("runway triggered");
+    /////////////////////////////////////////////////////
+    //check modeSelector status
+    /////////////////////////////////////////////////////
 
   if(manual) {
     /////////////////////////////////////////////////////
@@ -218,9 +223,9 @@ async function triggerRunway(inputImage) {
 }
 
 async function upscaleImg(runwayImage) {
-  //////////////////
-  //we are upscaling
-  //////////////////
+  ////////////////////////////////////////////////////////////
+  //we are upscaling 256x256 x4
+  ////////////////////////////////////////////////////////////
   console.log("upscaling");
 
   const inputs = {
