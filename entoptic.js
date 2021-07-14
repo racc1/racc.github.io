@@ -172,7 +172,7 @@ function imageToDataUri(img, width, height) {
 async function triggerRunway(inputImage) {
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-wait");
-  timeStamp.innerHTML = "<span class='bluu'>Preparing </span>" + performance.now();
+  timeStamp.innerHTML = "<span class='bluu'>Preparing</span> " + performance.now();
   timeStamp.style.display = "block";
   holdImg.src = "./assets/blank.svg";
 
