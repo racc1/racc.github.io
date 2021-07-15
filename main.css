@@ -34,7 +34,7 @@
 }
 
 @media screen and (orientation: portrait) {
-  #wrapper{
+  #wrapper {
       
       position:absolute;
       
@@ -49,6 +49,24 @@
       align-items: center;
       
       background-color: #0a0a0a;
+  }
+
+  #startbutton {
+    min-width: 400px;
+    min-height: 400px;
+  }
+
+  #imgwrap {
+    position: absolute;
+    width: 70%;
+    min-height: 502px;
+    display: flex;
+    bottom: 13%;
+  }
+
+  #holdimg {
+    min-width: 256px;
+    min-height: 256px;
   }
 }
 
