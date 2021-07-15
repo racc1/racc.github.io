@@ -239,19 +239,6 @@ body {
   margin: auto;
 }
 
-#startbutton {
-  min-width: 300px;
-  min-height: 300px;
-  max-width: 50%;
-  max-height: 60%;
-  margin: auto;
-  top: 50%;
-  border-radius: 50%;
-  background-color: #FF5733;
-  display: inline-flex;
-  cursor: pointer;
-}
-
 input[type="file"] {
   display: none;
 }
