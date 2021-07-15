@@ -11,10 +11,15 @@ body {
     margin:0;
     overflow:hidden;
     background: #0a0a0a;
+    font-size: 16px;
 }
 
 input[type="password" i] {
     font-size: 24px;
+}
+
+input, select { 
+  font-size: 100%; 
 }
 
 @media screen and (orientation: landscape) {
