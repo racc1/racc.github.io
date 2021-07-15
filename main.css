@@ -9,14 +9,21 @@
 
 
 @media screen (orientation: landscape) {
-  body {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
+  .wrapper{
+      transform: rotate(90deg);
+      transform-origin:bottom left;
+      
+      position:absolute;
+      top: -100vw;
+      left: 0;
+      
+      height:100vw;
+      width:100vh;
+      
+      background-color:#000;
+      color:#fff;
+
+      overflow:auto;
   }
 }
 
