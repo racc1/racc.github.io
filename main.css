@@ -36,6 +36,37 @@
     min-width: 250px;
     min-height: 250px;
   }
+
+
+  #imgwrap {
+    position: absolute;
+    width: auto;
+    min-height: 452px;
+    display: flex;
+    bottom: 10%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #hold-img {
+      min-width: 400px;
+      max-width: 512px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  #startbutton {
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 50%;
+    max-height: 60%;
+    margin: auto;
+    top: 50%;
+    border-radius: 50%;
+    background-color: #FF5733;
+    display: inline-flex;
+    cursor: pointer;
+  }
 }
 
 @media screen and (orientation: portrait) {
@@ -59,19 +90,31 @@
   #startbutton {
     min-width: 400px;
     min-height: 400px;
+    max-width: 50%;
+    max-height: 60%;
+    margin: auto;
+    top: 50%;
+    border-radius: 50%;
+    background-color: #FF5733;
+    display: inline-flex;
+    cursor: pointer;
   }
 
   #imgwrap {
     position: absolute;
     width: 70%;
-    min-height: 502px;
+    min-height: 512px;
     display: flex;
     bottom: 13%;
+    justify-content: center;
+    align-items: center;
   }
 
   #holdimg {
     min-width: 256px;
     min-height: 256px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -213,22 +256,6 @@ input[type="file"] {
   display: none;
 }
 
-#imgwrap {
-  position: absolute;
-  width: auto;
-  min-height: 452px;
-  display: flex;
-  bottom: 10%;
-  justify-content: center;
-  align-items: center;
-}
-
-#hold-img {
-    min-width: 400px;
-    max-width: 512px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 #timeStamp {
     font-family: "Arial Narrow", Arial, sans-serif;
