@@ -20,17 +20,27 @@
       height:100vw;
       width:100vh;
       
-      background-color:#000;
-      color:#fff;
+      background-color: #0a0a0a;
 
       overflow:auto;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .wrapper{
+      
+      position:absolute;
+      
+      height:100vh;
+      width:100vw;
+      
+      background-color: #0a0a0a;
   }
 }
 
 body {
     margin:0;
     overflow:hidden;
-    background-color: #0a0a0a;
 }
 
 input[type="password" i] {
