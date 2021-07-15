@@ -126,7 +126,7 @@ input, select {
     align-items: center;
   }
 
-  #holdimg {
+  #hold-img {
     min-width: 256px;
     min-height: 256px;
     margin-left: auto;
