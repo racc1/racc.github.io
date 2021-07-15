@@ -56,8 +56,8 @@
   }
 
   #startbutton {
-    min-width: 300px;
-    min-height: 300px;
+    min-width: 250px;
+    min-height: 250px;
     max-width: 50%;
     max-height: 60%;
     margin: auto;
