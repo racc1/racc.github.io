@@ -9,7 +9,7 @@
 
 
 @media screen and (orientation: landscape) {
-  .wrapper{
+  #wrapper{
       transform: rotate(90deg);
       transform-origin:bottom left;
       
@@ -27,7 +27,7 @@
 }
 
 @media screen and (orientation: portrait) {
-  .wrapper{
+  #wrapper{
       
       position:absolute;
       
