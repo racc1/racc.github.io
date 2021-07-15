@@ -7,6 +7,15 @@
     font-style: normal;
 }
 
+body {
+    margin:0;
+    overflow:hidden;
+    background: #0a0a0a
+}
+
+input[type="password" i] {
+    font-size: 24px;
+}
 
 @media screen and (orientation: landscape) {
   #wrapper{
@@ -29,7 +38,7 @@
       
       background-color: #0a0a0a;
 
-      overflow:auto;
+      overflow:hidden;
   }
 
   #startbutton {
@@ -71,7 +80,9 @@
 
 @media screen and (orientation: portrait) {
   #wrapper {
-      
+      margin:0;
+      overflow:hidden;
+
       position:absolute;
       
       height:100vh;
@@ -116,15 +127,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-body {
-    margin:0;
-    overflow:hidden;
-}
-
-input[type="password" i] {
-    font-size: 24px;
 }
 
 #pw-over {
@@ -306,9 +308,9 @@ input[type="file"] {
     background: radial-gradient(#ffffff, #ff5733);
     background-size: 400% 400%;
 
-    -webkit-animation: progress 10s ease infinite;
-    -moz-animation: progress 10s ease infinite;
-    animation: progress 10s ease infinite;
+    -webkit-animation: progress 5s ease infinite;
+    -moz-animation: progress 5s ease infinite;
+    animation: progress 5s ease infinite;
 }
 
 @-webkit-keyframes progress {
