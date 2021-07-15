@@ -49,7 +49,7 @@ input[type="password" i] {
 
   #imgwrap {
     position: absolute;
-    width: auto;
+    width: 80%;
     min-height: 452px;
     display: flex;
     bottom: 10%;
@@ -113,7 +113,7 @@ input[type="password" i] {
 
   #imgwrap {
     position: absolute;
-    width: 70%;
+    max-width: 70%;
     min-height: 512px;
     display: flex;
     bottom: 13%;
