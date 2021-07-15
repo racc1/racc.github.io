@@ -26,6 +26,7 @@ const startbutton = document.getElementById('startbutton');
 const timeStamp = document.getElementById('timeStamp');
 
 const modeSelector = document.getElementById("check");
+const modeSelectorBox = document.getElementById("mode-selector");
 var manual;
 
 
@@ -133,7 +134,6 @@ if(!initModelCompleted) {
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-notavailable");
   fileInput.disabled = true;
-  modeSelector.style.display = 'none';
 } 
 
 //////////////////////////////////////////////////////////
