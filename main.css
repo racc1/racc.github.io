@@ -116,7 +116,6 @@ input, select {
   #imgwrap {
     position: absolute;
     max-width: 70%;
-    min-height: 512px;
     display: flex;
     bottom: 13%;
     justify-content: center;
