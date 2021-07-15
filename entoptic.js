@@ -201,7 +201,7 @@ async function triggerRunway(inputImage) {
 
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-wait");
-  timeStamp.innerHTML = "<span class='bluu'>Loading Entoptic Field at</span> " + performance.now();
+  timeStamp.innerHTML = "<span class='bluu'>Searching Entoptic Field at</span> " + performance.now();
   timeStamp.style.display = "block";
   holdImg.src = "./assets/blank.svg";
 
