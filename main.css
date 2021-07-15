@@ -81,7 +81,7 @@ font-family: "Arial Narrow", Arial, sans-serif;
   display: inline-block;
 }
 
-@media (orientation: landscape) {
+/*@media (orientation: landscape) {
   #blocker {
     display: block;
   }
@@ -104,7 +104,7 @@ body {
   background-color: #0a0a0a;
   z-index: 99;
   top: 0%;
-}
+}*/
 
 #blocker p {
   font-family: "Arial Narrow", Arial, sans-serif;
