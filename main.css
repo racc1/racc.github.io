@@ -10,6 +10,7 @@
 body {
     margin:0;
     overflow:hidden;
+    background-color: #0a0a0a;
 }
 
 input[type="password" i] {
@@ -44,7 +45,6 @@ font-family: "Arial Narrow", Arial, sans-serif;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #0a0a0a;
     z-index: 100;
     align-content: center;
     justify-content: center;
