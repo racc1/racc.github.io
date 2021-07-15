@@ -28,6 +28,7 @@ const timeStamp = document.getElementById('timeStamp');
 const modeSelector = document.getElementById("check");
 var manual;
 
+
 //////////////////////////////////////////////////////////
 // PASSWORD AND TOKEN DECRYPTION
 //////////////////////////////////////////////////////////
@@ -51,8 +52,22 @@ if (pw.length == 0) {
 	pwOver.style.display = 'flex';
 }
 
+async function decryptWithPassword(cryptext, pw) {
+  
+  const encryptedMessage = await openpgp.readMessage({
+        armoredMessage: cryptext 
+    });
+  
+  const { data: decrypted } = await openpgp.decrypt({
+        message: encryptedMessage,
+        passwords: [pw], // decrypt with password
+        format: 'text' 
+    });
+    return decrypted;
+}
+
 //////////////////////////////////////////////////////////
-// INITIALIZE ONCE LOADED 
+// INITIALIZE RUNWAY MODELS AND CALL THEM
 //////////////////////////////////////////////////////////
 
 async function initModels(ganToken, upscalerToken, inpaintingToken) {
@@ -95,6 +110,10 @@ function infoKeepAlive() {
 	setTimeout(infoKeepAlive, keepAliveInterval);
 }
 
+//////////////////////////////////////////////////////////
+// SETUP UI ELEMENTS
+//////////////////////////////////////////////////////////
+
 modeSelector.addEventListener('click', function runThisOnButtonClick(event) {
     manual = modeSelector.checked;
     console.log("manual mode is " + manual);
@@ -116,6 +135,10 @@ if(!initModelCompleted) {
   fileInput.disabled = true;
   modeSelector.style.display = 'none';
 } 
+
+//////////////////////////////////////////////////////////
+// INTERACTION MANAGEMENT
+//////////////////////////////////////////////////////////
 
 function init() {
 
@@ -167,6 +190,9 @@ function imageToDataUri(img, width, height) {
     return canvas.toDataURL();
 }
 
+/////////////////////////////////////////////////////
+//RUNWAY CALLS
+/////////////////////////////////////////////////////
 
 
 async function triggerRunway(inputImage) {
@@ -240,18 +266,3 @@ async function upscaleImg(runwayImage) {
     timeStamp.style.display = "none";
   }).catch(console.error);
 }
-
-async function decryptWithPassword(cryptext, pw) {
-	
-	const encryptedMessage = await openpgp.readMessage({
-        armoredMessage: cryptext 
-    });
-	
-	const { data: decrypted } = await openpgp.decrypt({
-        message: encryptedMessage,
-        passwords: [pw], // decrypt with password
-        format: 'text' 
-    });
-    return decrypted;
-}
-

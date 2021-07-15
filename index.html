@@ -12,31 +12,33 @@
 </head>
 
 <body>
-<div id="pw-over">
-	<form id="pwof">
-		Submit password for <span class='bluu'>RACC 1</span> Entoptic Field Camera early access: <br><input type="password" id="pwop">
-		<br><input type="submit" id="pwos" value="OK" autocomplete="new-password">
-	</form>
-</div>
-<div id="blocker"><p><p>The <span class='bluu'>RACC 1</span> Entoptic Field Camera is available on handheld only.</p></div>
- <div id="wrap">
-    <label id="startbutton">
-      <input type="file" id="file-input" accept="image/*" capture="environment"/>
-    </label>
+<div class="wrapper">
+  <div id="pw-over">
+  	<form id="pwof">
+  		Submit password for <span class='bluu'>RACC 1</span> Entoptic Field Camera early access: <br><input type="password" id="pwop">
+  		<br><input type="submit" id="pwos" value="OK" autocomplete="new-password">
+  	</form>
   </div>
-  <div id="imgwrap">
-    <div id="timeStamp"></div>
-    <img src="./assets/blank.svg" id="hold-img" class="grid-automatic">
-  </div>
-  <div id="mode-selector">
-    <div class="automatic"></div>
-    <div id="switchbox">
-      <label class="switch">
-        <input type="checkbox" id="check">
-        <span class="slider round"></span>
+  <div id="blocker"><p><p>The <span class='bluu'>RACC 1</span> Entoptic Field Camera is available on handheld only.</p></div>
+   <div id="wrap">
+      <label id="startbutton">
+        <input type="file" id="file-input" accept="image/*" capture="environment"/>
       </label>
     </div>
-    <div class="manual"></div>
+    <div id="imgwrap">
+      <div id="timeStamp"></div>
+      <img src="./assets/blank.svg" id="hold-img" class="grid-automatic">
+    </div>
+    <div id="mode-selector">
+      <div class="automatic"></div>
+      <div id="switchbox">
+        <label class="switch">
+          <input type="checkbox" id="check">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="manual"></div>
+    </div>
   </div>
   <script src="lib/openpgp.min.js"></script>
   <script src="lib/crypt-tokens.js"></script>
