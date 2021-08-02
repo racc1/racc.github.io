@@ -33,15 +33,16 @@ var manual;
 
 
 window.addEventListener("orientationchange", function() {
-  if(window.orientation == 90) {
-      console.log("Landscape");
-//       section.setAttribute( "style", "-webkit-transform: rotate(-270deg);")
-//       modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(270deg);")
-  } else if (window.orientation == 0) {
-      console.log("Portrait");
-//       section.setAttribute( "style", "-webkit-transform: rotate(0deg);");
-//       modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(0deg);");
-  }
+  console.log(window.orientation):
+//   if(window.orientation == 90) {
+//       console.log("Landscape");
+// //       section.setAttribute( "style", "-webkit-transform: rotate(-270deg);")
+// //       modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(270deg);")
+//   } else if (window.orientation == 0) {
+//       console.log("Portrait");
+// //       section.setAttribute( "style", "-webkit-transform: rotate(0deg);");
+// //       modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(0deg);");
+//   }
 }, false);
 
 // if(screen.availHeight > screen.availWidth){
