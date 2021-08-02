@@ -33,7 +33,7 @@ var manual;
 
 
 window.addEventListener("orientationchange", function() {
-  console.log(window.orientation):
+  console.log(window.orientation);
 //   if(window.orientation == 90) {
 //       console.log("Landscape");
 // //       section.setAttribute( "style", "-webkit-transform: rotate(-270deg);")
