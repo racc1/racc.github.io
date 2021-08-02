@@ -2,7 +2,7 @@
 //TO DO: ATTRIBUTIONS; LINKS; LICENSES
 //////////////////////////////////////////////////////////
 
-const keepAliveInterval = 4 * 60 * 1000; //rML timeout is 4m
+const keepAliveInterval = 2 * 60 * 1000; //rML timeout is 2m
 
 var pw = "";
 
@@ -24,11 +24,33 @@ const fileInput = document.getElementById('file-input');
 const holdImg = document.getElementById('hold-img');
 const startbutton = document.getElementById('startbutton');
 const timeStamp = document.getElementById('timeStamp');
+const section = document.getElementById('section');
+const output = document.getElementById('output');
 
 const modeSelector = document.getElementById("check");
 const modeSelectorBox = document.getElementById("mode-selector");
 var manual;
 
+
+// window.addEventListener("orientationchange", function() {
+//   if(window.orientation == 90) {
+//       console.log("Landscape");
+//       section.setAttribute( "style", "-webkit-transform: rotate(-270deg);")
+//       modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(270deg);")
+//   } else if (window.orientation == 0) {
+//       console.log("Portrait");
+//       section.setAttribute( "style", "-webkit-transform: rotate(0deg);");
+//       modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(0deg);");
+//   }
+// }, false);
+
+// if(screen.availHeight > screen.availWidth){
+//     console.log("Landscape!");
+//     document.body.setAttribute( "style", "-webkit-transform: rotate(0deg);");
+// } else {
+//     console.log("Portrait");
+//     document.body.setAttribute( "style", "-webkit-transform: rotate(-90deg);");
+// }
 
 //////////////////////////////////////////////////////////
 // PASSWORD AND TOKEN DECRYPTION
@@ -94,6 +116,7 @@ async function initModels(ganToken, upscalerToken, inpaintingToken) {
 
     startbutton.classList.remove("progress_bar");
     holdImg.classList.remove("grid-notavailable");
+    holdImg.classList.add("grid-automatic");
     fileInput.disabled = false;
     modeSelectorBox.style.display = 'flex';
 
@@ -115,17 +138,17 @@ function infoKeepAlive() {
 // SETUP UI ELEMENTS
 //////////////////////////////////////////////////////////
 
-modeSelector.addEventListener('click', function runThisOnButtonClick(event) {
+modeSelector.addEventListener('click', function(event) {
     manual = modeSelector.checked;
     console.log("manual mode is " + manual);
     if(manual) {
       holdImg.classList.add("grid-manual");
       holdImg.classList.remove("grid-automatic");
-      holdImg.src = "./assets/blank.svg";
+      output.src = "./assets/blank.svg";
     } else {
       holdImg.classList.add("grid-automatic");
       holdImg.classList.remove("grid-manual");
-      holdImg.src = "./assets/blank.svg";
+      output.src = "./assets/blank.svg";
     }
 });
 
@@ -135,6 +158,8 @@ if(!initModelCompleted) {
   holdImg.classList.add("grid-notavailable");
   fileInput.disabled = true;
 } 
+
+// TOO DO RUNNING ORIENTATION CHECK ADD HORIZONTAL CLASS TO BODY
 
 //////////////////////////////////////////////////////////
 // INTERACTION MANAGEMENT
@@ -201,9 +226,8 @@ async function triggerRunway(inputImage) {
 
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-wait");
-  timeStamp.innerHTML = "<span class='bluu'>Searching Entoptic Field at</span> " + performance.now();
-  timeStamp.style.display = "block";
-  holdImg.src = "./assets/blank.svg";
+  // timeStamp.innerHTML = "<span class='bluu'>Searching Entoptic Field at</span> " + performance.now();
+  // timeStamp.style.display = "block";
 
     /////////////////////////////////////////////////////
     //check modeSelector status
@@ -260,9 +284,18 @@ async function upscaleImg(runwayImage) {
 
   upscaler.query(inputs).then(outputs => {
     const { output_image } = outputs;
-    holdImg.src = output_image;
+    output.src = output_image;
+    // console.log(output_image);
+    
     startbutton.classList.remove("progress_bar");
     holdImg.classList.remove("grid-wait");
-    timeStamp.style.display = "none";
+
+    if(!manual) {
+      holdImg.classList.add("grid-automatic");
+    } else {
+      holdImg.classList.add("grid-manual");
+    }
+
+    // timeStamp.style.display = "none";
   }).catch(console.error);
 }
