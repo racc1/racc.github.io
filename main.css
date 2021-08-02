@@ -123,8 +123,8 @@ input, select {
   }
 
   #hold-img {
-    min-width: 256px;
-    min-height: 256px;
+    max-width: 300px;
+    /*min-height: 256px;*/
     margin-left: auto;
     margin-right: auto;
   }
