@@ -16,6 +16,8 @@ body {
   margin:0;
   overflow:auto;
   background: #0a0a0a;
+  height: 100vh !important;
+  vertical-align: middle;
 }
 
 input[type="password" i] {
