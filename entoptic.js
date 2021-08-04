@@ -123,7 +123,7 @@ async function initModels(ganToken, upscalerToken, inpaintingToken) {
     holdImg.classList.remove("grid-notavailable");
     holdImg.classList.add("grid-automatic");
     fileInput.disabled = false;
-    modeSelectorBox.style.display = 'flex';
+    modeSelectorBox.style.visibility = 'visible';
 
     window.onload = init();
   });

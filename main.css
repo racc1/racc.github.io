@@ -263,19 +263,12 @@ display: none;
 /*Slider for modes*/
 
 #mode-selector {
-justify-content: center;
-align-items: center;
-align-content: center;
-flex-direction: row;
-display: none;
-/*  position: absolute;
-bottom: 4%;
-min-width: 40%;
-height: 3%;
-padding: 0%;
-margin: auto;
-display: none;
-justify-content: center;*/
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  display: flex;
+  visibility: hidden;
 }
 
 #switchbox {
