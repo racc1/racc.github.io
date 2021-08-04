@@ -357,29 +357,35 @@ border-radius: 6px;
   #mode-selector {
     flex-direction: row;
   }
-/*  #section {
+  #main {
     flex-direction: column;
-  }*/
+  }
 }
 
 @media (orientation: landscape) { 
   #mode-selector {
     flex-direction: column;
   }
-/*  #section {
+  #main {
     flex-direction: row;
-  }*/
+  }
 }
-/*
+
+
 @media screen and (orientation: landscape)  {
   #mode-selector {
     flex-direction: column;
   }
-  #section {
+  #main {
     flex-direction: row;
   }
 }
 
 @media screen and (orientation: portrait) {
-
-}*/
+  #mode-selector {
+    flex-direction: row;
+  }
+  #main {
+    flex-direction: column;
+  }
+}
