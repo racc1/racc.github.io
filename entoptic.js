@@ -26,6 +26,7 @@ const startbutton = document.getElementById('startbutton');
 const timeStamp = document.getElementById('timeStamp');
 const section = document.getElementById('section');
 const output = document.getElementById('output');
+const main = document.getElementById('main');
 
 const modeSelector = document.getElementById("check");
 const modeSelectorBox = document.getElementById("mode-selector");
