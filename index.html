@@ -16,8 +16,8 @@
 
   <body>
   
-  <!-- <section class="section" id="section"> -->
-        <div class="tile is-ancestor is-12" id="main">
+  <section class="section" id="section">
+        <div class="container" id="main">
 
           <div id="pw-over" class="tile is-parent">
             <form id="pwof">
@@ -26,9 +26,9 @@
             </form>
           </div>
 
-          <div class="tile is-parent is-12">
+          <div class="tile is-ancestor is-12">
 
-            <div class="tile is-child is-6" id="lens">
+            <div class="tile is-parent is-6" id="lens">
               <div class="tile is-child p-6">
                 <label id="startbutton" class="tile">
                   <input type="file" id="file-input" accept="image/*" capture="environment"/>
@@ -36,15 +36,15 @@
               </div>
             </div>
 
-            <div class="tile is-child is-4">
-              <div class="tile grid-notavailable" id="hold-img">
+            <div class="tile is-parent is-4">
+              <div class="tile is-child grid-notavailable" id="hold-img">
                 <figure class="image">
                     <img src="./assets/blank.svg" id="output">
                 </figure>
               </div>
             </div>
 
-            <div class="tile is-child is-2">
+            <div class="tile is-parent is-2">
               <div class="tile" id="mode-selector">
                 <div class="tile is-child is-flex-grow-1 automatic"></div>
                 <div class="tile is-child is-flex-grow-6" id="switchbox">
