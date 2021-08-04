@@ -29,8 +29,8 @@ font-size: 100%;
 
 #section {
   padding: 1.5rem;
-  height: 100vh !important;
-  transform-origin: top center;
+  /*height: 100vh !important;*/
+  /*transform-origin: top center;*/
 }
 
 #lens {
