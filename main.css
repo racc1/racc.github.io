@@ -16,7 +16,6 @@ body {
   margin:0;
   overflow:auto;
   background: #0a0a0a;
-  height: 100vh !important;
   vertical-align: middle;
 }
 
@@ -30,6 +29,7 @@ font-size: 100%;
 
 #section {
   padding: 1.5rem;
+  height: 100vh !important;
 }
 
 #lens {
