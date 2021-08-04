@@ -39,14 +39,14 @@ window.addEventListener("orientationchange", function() {
       // section.setAttribute( "style", "-webkit-transform: rotate(-270deg);")
       // modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(270deg);")
 
-      main.setAttribute( "style", "flex-direction: row;")
-      modeSelectorBox.setAttribute( "style", "flex-direction: column;")
+      main.setAttribute( "style", "flex-direction: row;");
+      modeSelectorBox.setAttribute( "style", "flex-direction: column;");
   } else if (window.orientation == 0) {
       // section.setAttribute( "style", "-webkit-transform: rotate(0deg);");
       // modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(0deg);");
 
-      main.setAttribute( "style", "flex-direction: column;")
-      modeSelectorBox.setAttribute( "style", "flex-direction: row;")
+      main.setAttribute( "style", "flex-direction: column;");
+      modeSelectorBox.setAttribute( "style", "flex-direction: row;");
   }
 }, false);
 
