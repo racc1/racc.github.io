@@ -17,7 +17,7 @@
   <body>
   
   <section class="section" id="section">
-        <div class="container" id="main">
+        <div class="tile is-ancestor container" id="main">
 
           <div id="pw-over" class="tile is-parent">
             <form id="pwof">
@@ -26,17 +26,17 @@
             </form>
           </div>
 
-          <div class="tile is-ancestor is-12">
+          <div class="tile is-parent is-12">
 
-            <div class="tile is-parent is-6" id="lens">
-              <div class="tile is-child p-6">
+            <div class="tile is-child is-6" id="lens">
+              <div class="tile p-6">
                 <label id="startbutton" class="tile">
                   <input type="file" id="file-input" accept="image/*" capture="environment"/>
                 </label>
               </div>
             </div>
 
-            <div class="tile is-parent is-4">
+            <div class="tile is-child is-4">
               <div class="tile is-child grid-notavailable" id="hold-img">
                 <figure class="image">
                     <img src="./assets/blank.svg" id="output">
@@ -44,16 +44,16 @@
               </div>
             </div>
 
-            <div class="tile is-parent is-2">
+            <div class="tile is-child is-2">
               <div class="tile" id="mode-selector">
-                <div class="tile is-child is-flex-grow-1 automatic"></div>
-                <div class="tile is-child is-flex-grow-6" id="switchbox">
+                <div class="tile is-flex-grow-1 automatic"></div>
+                <div class="tile is-flex-grow-6" id="switchbox">
                   <label class="switch">
                     <input type="checkbox" id="check">
                     <span class="slider round"></span>
                   </label>
               </div>
-                <div class="tile is-child is-flex-grow-1 manual"></div>
+                <div class="tile is-flex-grow-1 manual"></div>
               </div>
                 <!-- <div id="timeStamp" class="tile is-child is-4 mt-1"></div> -->
             </div>
