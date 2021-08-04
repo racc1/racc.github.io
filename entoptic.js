@@ -162,6 +162,7 @@ if(!initModelCompleted) {
   console.log("waiting");
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-notavailable");
+  modeSelectorBox.style.visibility = 'hidden';
   fileInput.disabled = true;
 } 
 

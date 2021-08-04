@@ -7,6 +7,13 @@
   font-style: normal;
 }
 
+.bluu {
+font-family: 'bluu_nexttitling';
+color: #fff;
+display: inline-block;
+}
+
+
 html {
   background: #0a0a0a;
   font-size: 16px;
@@ -27,10 +34,15 @@ input, select {
 font-size: 100%; 
 }
 
-#section {
-  padding: 1.5rem;
-  /*height: 100vh !important;*/
-  /*transform-origin: top center;*/
+#main {
+    padding: 0 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh; !important
+    width: auto;
+    align-content: center;
 }
 
 #lens {
@@ -38,8 +50,12 @@ font-size: 100%;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: contain;
-  justify-content: center;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #startbutton {
@@ -52,10 +68,11 @@ font-size: 100%;
   text-align: center;
 }
 
+
 #hold-img {
-/*  max-width: 256px;
+  min-width: 256px;
   margin-left: auto;
-  margin-right: auto;*/
+  margin-right: auto;
 }
 
 #pw-over {
@@ -75,6 +92,7 @@ font-size: 100%;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100vh;
   z-index: 100;
   align-content: center;
   justify-content: center;
@@ -97,12 +115,6 @@ font-size: 24px;
 font-weight: 700;
 
 box-shadow: 0; /*this is very funny...*/
-}
-
-.bluu {
-font-family: 'bluu_nexttitling';
-color: #fff;
-display: inline-block;
 }
 
 /*@media (orientation: landscape) {
@@ -144,34 +156,34 @@ display: block;
 }
 
 #wrap {
-display: flex;
-position: absolute;
-background-image: url(./assets/lens-w.svg);
-margin: auto;
-width: 70%;
-height: 40%;
-top: 2%;
-margin-left: auto;
-margin-right: auto;
-background-repeat: no-repeat, no-repeat;
-background-position: center, center;
-background-size: contain;
-justify-content: center;
-font-family: "Arial Narrow", Arial, sans-serif;
-font-size: 24px;
-font-weight: 700;
-line-height: 38.4px;
-color: #fff;
-text-align: center;
+  display: flex;
+  position: absolute;
+  background-image: url(./assets/lens-w.svg);
+  margin: auto;
+  width: 70%;
+  height: 40%;
+  top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: contain;
+  justify-content: center;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 38.4px;
+  color: #fff;
+  text-align: center;
 }
 
 #wrap p {
-vertical-align: middle;
-margin: auto;
+  vertical-align: middle;
+  margin: auto;
 }
 
 input[type="file"] {
-display: none;
+  display: none;
 }
 
 
@@ -220,6 +232,7 @@ display: none;
 .manual {
   width: 24px;
   height: 24px;
+  margin: 1rem;
   background-image: url(./assets/manual.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
@@ -229,6 +242,7 @@ display: none;
 .automatic {
   width: 24px;
   height: 24px;
+  margin: 1rem;
   background-image: url(./assets/automatic.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
@@ -263,12 +277,12 @@ display: none;
 /*Slider for modes*/
 
 #mode-selector {
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   align-content: center;
   flex-direction: row;
   display: flex;
-  visibility: hidden;
+  min-height: 10vh;
 }
 
 #switchbox {
