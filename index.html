@@ -27,7 +27,7 @@
             </form>
           </div>
 
-          <div class="tile is-12 level">
+          <div class="tile is-12">
             <div class="tile is-parent is-6" id="lens">
               <div class="tile is-child p-6">
                 <label id="startbutton" class="tile">
@@ -36,7 +36,7 @@
               </div>
             </div>
 
-            <div class="tile is-parent is-4 level">
+            <div class="tile is-parent is-4">
               <div class="tile grid-notavailable" id="hold-img">
                 <figure class="image">
                     <img src="./assets/blank.svg" id="output">
@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div class="tile is-parent is-2 level">
+            <div class="tile is-parent is-2">
               <div class="tile" id="mode-selector">
                 <div class="tile is-child is-flex-grow-1 automatic"></div>
                 <div class="tile is-child is-flex-grow-6" id="switchbox">
@@ -64,7 +64,7 @@
     <script>
     const convertStyle = () => {
       const height = window.innerHeight;
-      Array.from(document.getElementsByTagName("section")).forEach((element) => {
+      Array.from(document.getElementsByTagName("is-ancestor")).forEach((element) => {
         element.style.height = `${height}px`;
       });
     };
