@@ -73,10 +73,13 @@ input, select {
   min-width: 256px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0;
 }
 
 #output {
   max-width: 256px;
+  max-height: 256px;
+  padding: 0;
 }
 
 #pw-over {
