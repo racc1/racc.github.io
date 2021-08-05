@@ -93,12 +93,11 @@ input, select {
   background-color: #0a0a0a;
   bottom: 0;
   max-height: 100vh;
-  max-width: 100vw;
-  padding: 2rem;
+  width: 100vw;
+  padding: 0 2rem 0 2rem;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   z-index: 100;
-  margin-right: auto;
-  margin-left: auto;
-  position: ;
   align-content: center;
   justify-content: center;
   align-items: center;
