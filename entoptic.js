@@ -144,8 +144,10 @@ if(!initModelCompleted) {
 window.addEventListener("orientationchange", function() {
   
   //reset zoom level
-  const viewportmeta = document.querySelector('meta[name=viewport]');
-  viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
+  // const viewportmeta = document.querySelector('meta[name=viewport]');
+  // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
+
+  convertStyle();
 
   //reset flex-direction dependent on orientation
   if(window.orientation == 90 || window.orientation == -90) {
@@ -162,7 +164,7 @@ window.addEventListener("orientationchange", function() {
 }, false);
 
 const convertStyle = () => {
-  const height = window.innerHeight;
+  const height = VisualViewport.height
   const main = document.getElementById("main");
   main.setAttribute( "style", "height: " + height + "px;");
 };
