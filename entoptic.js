@@ -32,6 +32,11 @@ const modeSelector = document.getElementById("check");
 const modeSelectorBox = document.getElementById("mode-selector");
 var manual;
 
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 //////////////////////////////////////////////////////////
 // PASSWORD AND TOKEN DECRYPTION
 //////////////////////////////////////////////////////////
@@ -144,8 +149,8 @@ if(!initModelCompleted) {
 window.addEventListener("orientationchange", function() {
   
   //reset zoom level
-  const viewportmeta = document.querySelector('meta[name=viewport]');
-  viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
+  // const viewportmeta = document.querySelector('meta[name=viewport]');
+  // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
 
   convertStyle();
 
@@ -164,9 +169,8 @@ window.addEventListener("orientationchange", function() {
 }, false);
 
 const convertStyle = () => {
-  const height = window.innerHeight;
-  const main = document.getElementById("main");
-  main.setAttribute( "style", "height: " + height + "px;");
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
 
 window.addEventListener("resize", convertStyle);
