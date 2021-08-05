@@ -144,8 +144,8 @@ if(!initModelCompleted) {
 window.addEventListener("orientationchange", function() {
   
   //reset zoom level
-  // const viewportmeta = document.querySelector('meta[name=viewport]');
-  // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
+  const viewportmeta = document.querySelector('meta[name=viewport]');
+  viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
 
   convertStyle();
 
