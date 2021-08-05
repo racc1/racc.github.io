@@ -39,7 +39,8 @@ input, select {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  max-height: 100vh !important; 
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   width: auto;
   align-content: center;
 }
