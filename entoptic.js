@@ -33,7 +33,7 @@ const modeSelectorBox = document.getElementById("mode-selector");
 var manual;
 
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
+let vh = window.innerHeight;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
@@ -169,7 +169,7 @@ window.addEventListener("orientationchange", function() {
 }, false);
 
 const convertStyle = () => {
-    let vh = window.innerHeight * 0.01;
+    let vh = window.innerHeight;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
 
