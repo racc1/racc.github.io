@@ -46,15 +46,16 @@
       </div>
     </div>
 
-<!--     <script>
+  <script>
     const convertStyle = () => {
       const height = window.innerHeight;
       const main = document.getElementById("main");
-      main.sty
+      main.setAttribute( "style", "height: " + height + ";");
+      
     };
     window.addEventListener("resize", convertStyle);
     window.addEventListener("DOMContentLoaded", convertStyle);
-  </script> -->
+  </script>
   <script src="lib/openpgp.min.js"></script>
   <script src="lib/crypt-tokens.js"></script>
   <script src="entoptic.js"></script>

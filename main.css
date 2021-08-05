@@ -75,6 +75,10 @@ font-size: 100%;
   margin-right: auto;
 }
 
+#output {
+  max-width: 256px;
+}
+
 #pw-over {
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 36px;

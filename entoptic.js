@@ -35,28 +35,21 @@ var manual;
 
 window.addEventListener("orientationchange", function() {
   console.log(window.orientation);
-  if(window.orientation == 90 || window.orientation == -90) {
-      // section.setAttribute( "style", "-webkit-transform: rotate(-270deg);")
-      // modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(270deg);")
+  
+  //reset zoom level
+  const viewportmeta = document.querySelector('meta[name=viewport]');
+  viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
 
+
+  //reset flex-direction dependent on orientation
+  if(window.orientation == 90 || window.orientation == -90) {
       main.setAttribute( "style", "flex-direction: row;");
       modeSelectorBox.setAttribute( "style", "flex-direction: column;");
   } else if (window.orientation == 0) {
-      // section.setAttribute( "style", "-webkit-transform: rotate(0deg);");
-      // modeSelectorBox.setAttribute( "style", "-webkit-transform: rotate(0deg);");
-
       main.setAttribute( "style", "flex-direction: column;");
       modeSelectorBox.setAttribute( "style", "flex-direction: row;");
   }
 }, false);
-
-// if(screen.availHeight > screen.availWidth){
-//     console.log("Landscape!");
-//     document.body.setAttribute( "style", "-webkit-transform: rotate(0deg);");
-// } else {
-//     console.log("Portrait");
-//     document.body.setAttribute( "style", "-webkit-transform: rotate(-90deg);");
-// }
 
 //////////////////////////////////////////////////////////
 // PASSWORD AND TOKEN DECRYPTION
