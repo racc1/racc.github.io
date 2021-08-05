@@ -32,14 +32,13 @@ const modeSelector = document.getElementById("check");
 const modeSelectorBox = document.getElementById("mode-selector");
 var manual;
 
-
+// handle viewport sizing
 window.addEventListener("orientationchange", function() {
   console.log(window.orientation);
   
   //reset zoom level
   const viewportmeta = document.querySelector('meta[name=viewport]');
   viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
-
 
   //reset flex-direction dependent on orientation
   if(window.orientation == 90 || window.orientation == -90) {
@@ -50,6 +49,16 @@ window.addEventListener("orientationchange", function() {
       modeSelectorBox.setAttribute( "style", "flex-direction: row;");
   }
 }, false);
+
+const convertStyle = () => {
+  const height = window.innerHeight;
+  const main = document.getElementById("main");
+  main.setAttribute( "style", "height: " + height + "px;");
+
+};
+
+window.addEventListener("resize", convertStyle);
+window.addEventListener("DOMContentLoaded", convertStyle);
 
 //////////////////////////////////////////////////////////
 // PASSWORD AND TOKEN DECRYPTION
