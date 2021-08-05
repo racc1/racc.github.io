@@ -149,8 +149,6 @@ if(!initModelCompleted) {
 window.addEventListener("orientationchange", function() {
   
   //reset zoom level
-  // const viewportmeta = document.querySelector('meta[name=viewport]');
-  // viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
 
   convertStyle();
 
@@ -169,6 +167,9 @@ window.addEventListener("orientationchange", function() {
 }, false);
 
 const convertStyle = () => {
+    const viewportmeta = document.querySelector('meta[name=viewport]');
+    viewportmeta.setAttribute('content', "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0");
+    
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
