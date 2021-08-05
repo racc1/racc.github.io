@@ -164,7 +164,7 @@ window.addEventListener("orientationchange", function() {
 }, false);
 
 const convertStyle = () => {
-  const height = VisualViewport.height
+  const height = window.innerHeight;
   const main = document.getElementById("main");
   main.setAttribute( "style", "height: " + height + "px;");
 };
