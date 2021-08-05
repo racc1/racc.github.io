@@ -73,7 +73,6 @@ input, select {
   min-width: 256px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
