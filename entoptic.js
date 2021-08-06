@@ -188,7 +188,6 @@ function init() {
   var file; 
 
   startbutton.style.setProperty("background-color", "#FF5733");
-  holdImg.style.setProperty("display", "block");
 
   fileInput.addEventListener('change', (e) => handleFiles(
     e.target.files
@@ -244,9 +243,6 @@ async function triggerRunway(inputImage) {
 
   startbutton.classList.add("progress_bar");
   holdImg.classList.add("grid-wait");
-  // timeStamp.innerHTML = "<span class='bluu'>Searching Entoptic Field at</span> " + performance.now();
-  // timeStamp.style.display = "block";
-
     /////////////////////////////////////////////////////
     //check modeSelector status
     /////////////////////////////////////////////////////
@@ -294,19 +290,16 @@ async function upscaleImg(runwayImage) {
   ////////////////////////////////////////////////////////////
   //we are upscaling 256x256 x4
   ////////////////////////////////////////////////////////////
-  // console.log("upscaling");
+  console.log("upscaling");
 
   var upScale = 512;
   var finalImg = new Image();
+
   finalImg.onload = function(){
       // create an off-screen canvas
     var canvas = document.createElement('canvas'),
         ctx = canvas.getContext('2d');
 
-    // ctx.mozImageSmoothingEnabled = false;
-    // ctx.webkitImageSmoothingEnabled = false;
-    // ctx.msImageSmoothingEnabled = false;
-    // ctx.imageSmoothingEnabled = false;
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
 
@@ -314,9 +307,10 @@ async function upscaleImg(runwayImage) {
     canvas.height = upScale;
 
     ctx.drawImage(finalImg, 0, 0, upScale, upScale);
+    ctx.filter = "blur(5px)";
+    sharpen(ctx, upScale, upScale, 1);
 
     output.src = canvas.toDataURL();
-    console.log(output);
     
     startbutton.classList.remove("progress_bar");
     holdImg.classList.remove("grid-wait");
@@ -329,26 +323,54 @@ async function upscaleImg(runwayImage) {
   }
   
   finalImg.src = runwayImage;
+}
 
-  // console.log(finalImg);
-  // const inputs = {
-  //   "input_image": runwayImage.toString()
-  // };
+//image-processing experiment
 
-  // upscaler.query(inputs).then(outputs => {
-  //   const { output_image } = outputs;
-  //   output.src = output_image;
-  //   // console.log(output_image);
-    
-  //   startbutton.classList.remove("progress_bar");
-  //   holdImg.classList.remove("grid-wait");
+function sharpen(ctx, w, h, mix) {
+    var x, sx, sy, r, g, b, a, dstOff, srcOff, wt, cx, cy, scy, scx,
+        weights = [0, -1, 0, -1, 5, -1, 0, -1, 0],
+        katet = Math.round(Math.sqrt(weights.length)),
+        half = (katet * 0.5) | 0,
+        dstData = ctx.createImageData(w, h),
+        dstBuff = dstData.data,
+        srcBuff = ctx.getImageData(0, 0, w, h).data,
+        y = h;
 
-  //   if(!manual) {
-  //     holdImg.classList.add("grid-automatic");
-  //   } else {
-  //     holdImg.classList.add("grid-manual");
-  //   }
+    while (y--) {
+        x = w;
+        while (x--) {
+            sy = y;
+            sx = x;
+            dstOff = (y * w + x) * 4;
+            r = 0;
+            g = 0;
+            b = 0;
+            a = 0;
 
-  //   // timeStamp.style.display = "none";
-  // }).catch(console.error);
+            for (cy = 0; cy < katet; cy++) {
+                for (cx = 0; cx < katet; cx++) {
+                    scy = sy + cy - half;
+                    scx = sx + cx - half;
+
+                    if (scy >= 0 && scy < h && scx >= 0 && scx < w) {
+                        srcOff = (scy * w + scx) * 4;
+                        wt = weights[cy * katet + cx];
+
+                        r += srcBuff[srcOff] * wt;
+                        g += srcBuff[srcOff + 1] * wt;
+                        b += srcBuff[srcOff + 2] * wt;
+                        a += srcBuff[srcOff + 3] * wt;
+                    }
+                }
+            }
+
+            dstBuff[dstOff] = r * mix + srcBuff[dstOff] * (1 - mix);
+            dstBuff[dstOff + 1] = g * mix + srcBuff[dstOff + 1] * (1 - mix);
+            dstBuff[dstOff + 2] = b * mix + srcBuff[dstOff + 2] * (1 - mix);
+            dstBuff[dstOff + 3] = srcBuff[dstOff + 3];
+        }
+    }
+
+    ctx.putImageData(dstData, 0, 0);
 }

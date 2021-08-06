@@ -1,1 +1,13 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><defs><style>.cls-1,.cls-2,.cls-4{fill:none;}.cls-2{stroke:#8cc63f;}.cls-2,.cls-4{stroke-miterlimit:10;stroke-width:0.25px;}.cls-3{clip-path:url(#clip-path);}.cls-4{stroke:#fff;}</style><clipPath id="clip-path"><rect class="cls-1" x="-58" y="22" width="20" height="20"/></clipPath></defs><rect class="cls-2" x="22" y="22" width="20" height="20"/><g class="cls-3"><line class="cls-2" x1="2" y1="18" x2="-62" y2="82"/><line class="cls-2" x1="5" y1="21" x2="-59" y2="85"/><line class="cls-2" x1="8" y1="24" x2="-56" y2="88"/><line class="cls-2" x1="11" y1="27" x2="-53" y2="91"/><line class="cls-2" x1="14" y1="30" x2="-50" y2="94"/></g><rect class="cls-4" x="2" y="2" width="60" height="60"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#8CC63F;stroke-width:0.25;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+</style>
+<rect x="14" y="14" class="st0" width="36" height="36"/>
+<g>
+	<path class="st1" d="M63.7,0.3v63.5H0.3V0.3H63.7 M64,0H0v64h64V0L64,0z"/>
+</g>
+</svg>
