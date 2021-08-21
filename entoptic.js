@@ -7,7 +7,7 @@ const keepAliveInterval = 2 * 60 * 1000; //rML timeout is 2m
 var pw = "";
 
 var gan;
-var upscaler;
+// var upscaler;
 var inpainting;
 
 let initModelCompleted = false;
@@ -47,10 +47,10 @@ pwOver.addEventListener("submit", e => {
 		var pw = document.getElementById('pwop').value;
 		console.log('password entered: ' +  pw);
 		Promise.all(
-			[ganTokenCrypt, upscalerTokenCrypt, inpaintingTokenCrypt]
+			[ganTokenCrypt, inpaintingTokenCrypt]
 			.map(t => decryptWithPassword(t, pw))).then( decrypted => {
 			pwOver.style.display = 'none';
-			initModels(decrypted[0], decrypted[1], decrypted[2]);
+			initModels(decrypted[0], decrypted[1]);
 		});
 		
 	}
@@ -78,24 +78,24 @@ async function decryptWithPassword(cryptext, pw) {
 // INITIALIZE RUNWAY MODELS AND CALL THEM
 //////////////////////////////////////////////////////////
 
-async function initModels(ganToken, upscalerToken, inpaintingToken) {
+async function initModels(ganToken, inpaintingToken) {
 
 	gan = new rw.HostedModel({
 	  url: "https://gan.hosted-models.runwayml.cloud/v1/",
 	  token: ganToken
 	});
 
-	upscaler = new rw.HostedModel({
-	  url: "https://upscaler.hosted-models.runwayml.cloud/v1/",
-	  token: upscalerToken
-	});
+	// upscaler = new rw.HostedModel({
+	//   url: "https://upscaler.hosted-models.runwayml.cloud/v1/",
+	//   token: upscalerToken
+	// });
 
 	inpainting = new rw.HostedModel({
 	  url: "https://inpainting.hosted-models.runwayml.cloud/v1/",
 	  token: inpaintingToken
 	});
 
-  Promise.all([gan.info(), upscaler.info(), inpainting.info()]).then((values) => {
+  Promise.all([gan.info(), inpainting.info()]).then((values) => {
     console.log("promises resolved");
     initModelCompleted = true;
 
@@ -113,7 +113,7 @@ async function initModels(ganToken, upscalerToken, inpaintingToken) {
 
 function infoKeepAlive() {
 	gan.info().then(info => console.log(info));
-	upscaler.info().then(info => console.log(info));
+	// upscaler.info().then(info => console.log(info));
 	inpainting.info().then(info => console.log(info));
 	
 	setTimeout(infoKeepAlive, keepAliveInterval);
