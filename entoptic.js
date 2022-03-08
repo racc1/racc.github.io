@@ -214,6 +214,7 @@ function prepareInputs(i) {
     triggerRunway(procImg);
   }
   inputImg.src = i.toString();
+  console.log(inputImg.src);
 } 
 
 function imageToDataUri(img, width, height) {
